@@ -49,17 +49,17 @@ function setup() {
 	
     text1 = new Jitter("LONELY", lonely, 0.2);
 	text2 = new Jitter("PATIENT", patient, 0.2);
-	text3 = new Jitter("FOCUSED", focus, 1);
-	text4 = new Jitter("COMFORT", comfort, 1.2);
-    text5 = new Jitter("CALM", calm, 1.2);
-    text6 = new Jitter("LOVE", love, 1.5);
-    text7 = new Jitter("DAZED", dazed, 1.2);
+	text3 = new Jitter("FOCUSED", focus, 1.5);
+	text4 = new Jitter("COMFORT", comfort, 1.8);
+    text5 = new Jitter("CALM", calm, 1.8);
+    text6 = new Jitter("LOVE", love, 2);
+    text7 = new Jitter("DAZED", dazed, 1.5);
     text8 = new Jitter("ANXIOUS", anxious, 0.3);
     text9 = new Jitter("DEPRESSION", depression, 0.3);
-    text10 = new Jitter("EXHAUSTION", exhaustion, 1);
-    text11 = new Jitter("BITTERSWEET", bittersweet, 1);
+    text10 = new Jitter("EXHAUSTION", exhaustion, 1.5);
+    text11 = new Jitter("BITTERSWEET", bittersweet, 1.5);
     text12 = new Jitter("PRIDE", pride, 0.5);
-    text13 = new Jitter("CLEAN", clean, 1);
+    text13 = new Jitter("CLEAN", clean, 1.5);
     
     comfort.loop(0, 1, 0, 4, 38);
     lonely.loop(0, 1, 0, 1, 40);
@@ -143,7 +143,7 @@ function Jitter(word, sound, adjustment) {
 		fill(random(255));
   };
     this.soundz = function() {
-        var distance = dist(mouseX,mouseY,this.x,this.y) 
+        var distance = dist(mouseX - 2*this.fontsize, mouseY + 0.5*this.fontsize, this.x, this.y) 
         var volume = adjustment*exp(-distance/50);
         console.log(distance);
         //console.log(volume);
