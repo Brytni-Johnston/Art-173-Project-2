@@ -45,6 +45,7 @@ function preload() {
 
 function setup() {
   createCanvas(1366, 768);
+	textAlign(CENTER, CENTER);
 	backgroundColor = random(255);
 	
     text1 = new Jitter("LONELY", lonely, 0.2);
@@ -121,8 +122,8 @@ function draw() {
 }
 
 function Jitter(word, sound, adjustment) {
-  this.x = random(-20, width-200);
-  this.y = random(50,height-20);
+  this.x = random(200, width-200);
+  this.y = random(50, height-50);
   this.fontsize = random(10, 70);
   this.speed = 1;
   this.word = word;
@@ -143,8 +144,8 @@ function Jitter(word, sound, adjustment) {
 		fill(random(255));
   };
     this.soundz = function() {
-        var distance = dist(mouseX - 2*this.fontsize, mouseY + 0.5*this.fontsize, this.x, this.y) 
-        var volume = adjustment*exp(-distance/50);
+        var distance = dist(mouseX, mouseY, this.x, this.y) 
+        var volume = adjustment*exp(-distance/70);
         console.log(distance);
         //console.log(volume);
         sound.amp(volume);
